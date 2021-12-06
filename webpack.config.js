@@ -2,12 +2,13 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
-const CompressionWebpackPlugin = require('compression-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
-const zlib = require("zlib");
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
-module.exports = {
+const smp = new SpeedMeasurePlugin();
+
+const config = smp.wrap({
     mode: "production",
     devtool: false,
 
@@ -25,10 +26,6 @@ module.exports = {
     plugins: [
         new ESLintPlugin({ cache: true }),
         new StylelintPlugin({ files: '**/*.css', cache: true }),
-        new MiniCssExtractPlugin({
-            filename: 'src/css/[name].css',
-            chunkFilename: "src/css/[name]-[id].css",
-        }),
         new HtmlWebpackPlugin({
             filename: 'popup.html',
             template: path.resolve(__dirname, 'src/popup.html'),
@@ -116,4 +113,11 @@ module.exports = {
         maxEntrypointSize: 200000,
         maxAssetSize: 200000,
     }
-};
+});
+
+config.plugins.push(new MiniCssExtractPlugin({
+    filename: 'src/css/[name].css',
+    chunkFilename: "src/css/[name]-[id].css",
+}));
+
+module.exports = config;

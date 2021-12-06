@@ -4946,6 +4946,7 @@ __metadata:
     react-dom: ^17.0.2
     react-is: ^17.0.2
     regenerator-runtime: ^0.13.9
+    speed-measure-webpack-plugin: ^1.5.0
     style-loader: ^3.3.1
     styled-components: ^5.3.3
     styled-normalize: ^8.0.7
@@ -8196,6 +8197,17 @@ __metadata:
   bin:
     specificity: ./bin/specificity
   checksum: e558f1098f85aa54a8e90277309ac0d1913c84812c0bd349aa449076aa700964f71ab69f04f5fda9b7898bef9b7da3faa1cad9caedfd3f1a1ebfebedc18604ab
+  languageName: node
+  linkType: hard
+
+"speed-measure-webpack-plugin@npm:^1.5.0":
+  version: 1.5.0
+  resolution: "speed-measure-webpack-plugin@npm:1.5.0"
+  dependencies:
+    chalk: ^4.1.0
+  peerDependencies:
+    webpack: ^1 || ^2 || ^3 || ^4 || ^5
+  checksum: 5562da1e022a0c0f91dfaef362239ae110107ce1da6b9ba8ceaf16b998067ec89c96374afd049205cfa3526f8ec4551543a5c3dca3abd774b7923225a81bd24a
   languageName: node
   linkType: hard
 

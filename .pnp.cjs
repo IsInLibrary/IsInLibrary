@@ -68,6 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
             ["regenerator-runtime", "npm:0.13.9"],
+            ["speed-measure-webpack-plugin", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:1.5.0"],
             ["style-loader", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:3.3.1"],
             ["styled-components", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:5.3.3"],
             ["styled-normalize", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:8.0.7"],
@@ -6434,6 +6435,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-dom", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:17.0.2"],
             ["react-is", "npm:17.0.2"],
             ["regenerator-runtime", "npm:0.13.9"],
+            ["speed-measure-webpack-plugin", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:1.5.0"],
             ["style-loader", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:3.3.1"],
             ["styled-components", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:5.3.3"],
             ["styled-normalize", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:8.0.7"],
@@ -10530,6 +10532,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/specificity-npm-0.4.1-042c3c2fd5-e558f1098f.zip/node_modules/specificity/",
           "packageDependencies": [
             ["specificity", "npm:0.4.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["speed-measure-webpack-plugin", [
+        ["npm:1.5.0", {
+          "packageLocation": "./.yarn/cache/speed-measure-webpack-plugin-npm-1.5.0-32e7d61e93-5562da1e02.zip/node_modules/speed-measure-webpack-plugin/",
+          "packageDependencies": [
+            ["speed-measure-webpack-plugin", "npm:1.5.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:1.5.0", {
+          "packageLocation": "./.yarn/__virtual__/speed-measure-webpack-plugin-virtual-63fb566efd/0/cache/speed-measure-webpack-plugin-npm-1.5.0-32e7d61e93-5562da1e02.zip/node_modules/speed-measure-webpack-plugin/",
+          "packageDependencies": [
+            ["speed-measure-webpack-plugin", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:1.5.0"],
+            ["@types/webpack", null],
+            ["chalk", "npm:4.1.2"],
+            ["webpack", "virtual:0df04a142ecc05fdad037ea889c46da77dc8ba445a19fc43ecdd0155a1dee8decbb8f9f77798e34b546b8a38534b522ef4817fd3c072b574024807f5e3c6a947#npm:5.64.4"]
+          ],
+          "packagePeers": [
+            "@types/webpack",
+            "webpack"
           ],
           "linkType": "HARD",
         }]
