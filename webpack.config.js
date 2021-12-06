@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const CompressionWebpackPlugin = require('compression-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -17,7 +18,7 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'src/js/[name].js'
+        filename: 'src/js/[name].bundle.js'
     },
 
     plugins: [
@@ -27,7 +28,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             linkType: false,
             filename: 'src/css/[name].css',
-        })
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'popup.html',
+            chunks: ['popup']
+        }),
     ],
 
 
@@ -45,8 +50,10 @@ module.exports = {
     },
 
     module: {
-        rules: [
-            { loader: 'ts-loader' },
+        rules: [{
+                test: /\.tsx?$/,
+                use: ['babel-loader', 'ts-loader'],
+            },
             { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
         ]
     },
