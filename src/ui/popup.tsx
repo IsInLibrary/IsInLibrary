@@ -2,6 +2,8 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 import styled from "styled-components";
 
+import "tailwindcss/tailwind.css";
+
 class Hello extends React.Component {
   render() {
     const PopupPadded = styled.div`
@@ -12,14 +14,14 @@ class Hello extends React.Component {
       padding-left: 10px;
       padding-right: 10px;
 
-      h1 {
+      h1:first-child {
         color: blueviolet;
       }
     `;
     return (
       <PopupPadded className="popup-padded">
         <h1>Hello, World!</h1>
-        <span className="text-blue-500">Tailwind Enabled if text is blue.</span>
+        <h1 className="text-blue-500">Tailwind Enabled if text is blue.</h1>
       </PopupPadded>
     );
   }
@@ -28,3 +30,5 @@ class Hello extends React.Component {
 // --------------
 
 ReactDOM.render(<Hello />, document.getElementById("is-in-library"));
+
+console.log("good");
