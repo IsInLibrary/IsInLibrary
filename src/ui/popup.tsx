@@ -7,17 +7,45 @@ import "tailwindcss/tailwind.css";
 class Hello extends React.Component {
   render() {
     const PopupPadded = styled.div`
-      width: 30vw;
-      height: 40vh;
+      min-width: 350px;
+      min-height: 450px;
+      background-color: #2c272e;
+      display: flex;
+      flex-direction: column;
 
-      h1:first-child {
-        color: blueviolet;
+      div {
+        flex-grow: 1;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+      }
+      div > h1 {
+        flex-shrink: 1;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 22px;
+        overflow-wrap: break-word;
+      }
+
+      div:first-child > h1 {
+        color: #94b3fd;
+      }
+
+      div:nth-child(3) > h1 {
+        color: #eeebdd;
       }
     `;
     return (
       <PopupPadded className="popup-padded">
-        <h1>Hello, World!</h1>
-        <h1 className="text-blue-500">Tailwind Enabled if text is blue.</h1>
+        <div>
+          <h1>Hello, World!</h1>
+        </div>
+        <div>
+          <h1 className="text-blue-400">Tailwind Enabled if text is blue.</h1>
+        </div>
+        <div>
+          <h1>Happy Reading!</h1>
+        </div>
       </PopupPadded>
     );
   }
