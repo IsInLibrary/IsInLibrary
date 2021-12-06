@@ -8,10 +8,12 @@ class Hello extends React.Component {
   render() {
     const PopupPadded = styled.div`
       min-width: 350px;
-      min-height: 450px;
+      min-height: 500px;
       background-color: #2c272e;
       display: flex;
       flex-direction: column;
+
+      border: 0.15em solid #fff3e4;
 
       div {
         flex-grow: 1;
