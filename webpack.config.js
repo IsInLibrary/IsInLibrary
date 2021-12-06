@@ -1,6 +1,9 @@
 const path = require('path');
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const CompressionWebpackPlugin = require('compression-webpack-plugin')
 
 module.exports = {
     mode: "development",
@@ -18,6 +21,9 @@ module.exports = {
     },
 
     plugins: [
+        new CompressionWebpackPlugin(),
+        new ESLintPlugin({ cache: true }),
+        new StylelintPlugin({ files: '**/*.css', cache: true }),
         new MiniCssExtractPlugin({
             linkType: false,
             filename: 'src/css/[name].css',
@@ -40,8 +46,18 @@ module.exports = {
 
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader" },
-            { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'], sideEffects: true }
+            { loader: 'ts-loader' },
+            { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
         ]
     },
+
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+        },
+    },
+    cache: {
+        type: 'filesystem',
+        compression: 'brotli',
+    }
 };
