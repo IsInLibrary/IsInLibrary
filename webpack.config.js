@@ -9,7 +9,7 @@ const zlib = require("zlib");
 
 module.exports = {
     mode: "production",
-    devtool: "source-map",
+    devtool: false,
 
     entry: {
         content: './src/app/content.ts',
