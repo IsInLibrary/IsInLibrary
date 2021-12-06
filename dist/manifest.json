@@ -1,27 +1,20 @@
 {
-    "name": "TS/R/WP Chrome Extension",
+    "name": "IsInLibrary",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "Boilerplate for a Chrome extension with TypeScript, React, and Webpack.",
-    "homepage_url": "https://duo.com/labs",
-    "icons": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
-    },
+    "description": "장바구니에 책을 담을때 책이 근처 도서관에 알려주는 확장 프로그램",
+    "homepage_url": "https://github.com/IsInLibrary/IsInLibrary",
+    "icons": {},
+    "action": {},
     "browser_action": {
         "default_title": "TSRWPCX",
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": [
-            "src/js/background.js"
-        ],
+        "scripts": ["src/js/background.js"],
         "persistent": true
     },
-    "permissions": [
-        "https://*/*"
-    ],
+    "permissions": ["https://*/*", "activeTab", "storage"],
     "web_accessible_resources": [
         "src/js/background.js",
         "src/js/content.js",
@@ -29,13 +22,7 @@
     ],
     "content_security_policy": "style-src 'self' 'unsafe-inline' script-src 'self' 'unsafe-inline';",
     "content_scripts": [{
-        "matches": [
-            "https://*/*"
-        ],
-        "js": [
-            "src/js/background.js",
-            "src/js/content.js",
-            "src/js/popup.js"
-        ]
+        "matches": ["https://*/*"],
+        "js": ["src/js/background.js", "src/js/content.js", "src/js/popup.js"]
     }]
 }

@@ -1,8 +1,14 @@
-chrome.runtime.sendMessage({}, (response) => {
-  var checkReady = setInterval(() => {
-    if (document.readyState === 'complete') {
-      clearInterval(checkReady);
-      console.log("We're in the injected content script!");
-    }
-  });
-});
+import { urlMapper, BookStore } from "../url/checker";
+
+const main = async () => {
+  let mapping: BookStore | null = urlMapper();
+
+  if (!mapping) {
+    return;
+  }
+
+  const message = `Your tab is in ${mapping} bookstore cart page!`;
+  console.log(message);
+};
+
+main();
