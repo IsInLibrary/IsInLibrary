@@ -23,19 +23,6 @@ module.exports = {
     },
 
     plugins: [
-        new CompressionWebpackPlugin({
-            filename: "[path][base].br",
-            algorithm: "brotliCompress",
-            test: /\.(js|css|html|svg)$/,
-            compressionOptions: {
-                params: {
-                    [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
-                },
-            },
-            threshold: 10240,
-            minRatio: 0.8,
-            deleteOriginalAssets: true,
-        }),
         new ESLintPlugin({ cache: true }),
         new StylelintPlugin({ files: '**/*.css', cache: true }),
         new MiniCssExtractPlugin({
@@ -112,7 +99,9 @@ module.exports = {
                 },
             },
         },
-        runtimeChunk: true,
+        runtimeChunk: {
+            name: (entrypoint) => `entry-${entrypoint.name}`
+        },
         usedExports: 'global',
         chunkIds: 'deterministic',
         minimize: true,
