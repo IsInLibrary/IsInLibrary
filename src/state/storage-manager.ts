@@ -8,7 +8,7 @@ const getter = (key: string): Promise<any> => {
 
 const setter = (key: string, value: any): Promise<any> => {
   return new Promise((resolve, reject) => {
-    chrome.storage.local.set({ key: value }, () => {
+    chrome.storage.local.set({ [key]: value }, () => {
       resolve(null);
     });
   });
