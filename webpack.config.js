@@ -4,6 +4,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
 const smp = new SpeedMeasurePlugin();
@@ -102,7 +103,10 @@ const config = smp.wrap({
         usedExports: 'global',
         chunkIds: 'deterministic',
         minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimizer: [
+            new TerserPlugin(),
+            new CssMinimizerPlugin(),
+        ],
     },
     cache: {
         type: 'filesystem',
