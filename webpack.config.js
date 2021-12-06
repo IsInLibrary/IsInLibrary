@@ -14,13 +14,13 @@ module.exports = {
 
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].js'
+        filename: 'src/js/[name].js'
     },
 
     plugins: [
         new MiniCssExtractPlugin({
             linkType: false,
-            filename: 'css/[name].css',
+            filename: 'src/css/[name].css',
         })
     ],
 
@@ -41,7 +41,7 @@ module.exports = {
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" },
-            { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
+            { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'], sideEffects: true }
         ]
     },
 };
