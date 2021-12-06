@@ -56,5 +56,3 @@ class Hello extends React.Component {
 // --------------
 
 ReactDOM.render(<Hello />, document.getElementById("is-in-library"));
-
-console.log("good");
