@@ -1,5 +1,6 @@
 const path = require('path');
 const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     mode: "development",
@@ -12,27 +13,35 @@ module.exports = {
     },
 
     output: {
-        path: path.resolve(__dirname, 'dist/js'),
-        filename: '[name].js'
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'js/[name].js'
     },
+
+    plugins: [
+        new MiniCssExtractPlugin({
+            linkType: false,
+            filename: 'css/[name].css',
+        })
+    ],
+
 
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".jsx"],
         plugins: [
-            PnpWebpackPlugin,
+            PnpWebpackPlugin
         ],
     },
 
     resolveLoader: {
         plugins: [
-            PnpWebpackPlugin.moduleLoader(module),
+            PnpWebpackPlugin.moduleLoader(module)
         ],
     },
 
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "ts-loader" },
-            { test: /\.css$/, use: ['style-loader', 'css-loader'] }
+            { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader'] }
         ]
     },
 };

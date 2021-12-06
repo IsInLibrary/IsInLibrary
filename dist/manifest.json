@@ -13,7 +13,6 @@
         "default_title": "TSRWPCX",
         "default_popup": "popup.html"
     },
-    "default_locale": "en",
     "background": {
         "scripts": [
             "js/background.js"
@@ -30,6 +29,7 @@
         ],
         "js": [
             "js/content.js"
-        ]
+        ],
+        "css": ["css/popup.css"]
     }]
 }
