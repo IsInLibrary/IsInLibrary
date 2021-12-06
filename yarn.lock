@@ -923,6 +923,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/jest@npm:^27.0.3":
+  version: 27.0.3
+  resolution: "@types/jest@npm:27.0.3"
+  dependencies:
+    jest-diff: ^27.0.0
+    pretty-format: ^27.0.0
+  checksum: 3683a9945821966f6dccddf337219a5d682633687c9d30df859223db553589f63e9b2c34e69f0cc845c86ffcf115742f25c12ea03c8d33d2244890fdc0af61e2
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.9":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -1052,7 +1062,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/experimental-utils@npm:5.5.0":
+"@typescript-eslint/experimental-utils@npm:5.5.0, @typescript-eslint/experimental-utils@npm:^5.0.0":
   version: 5.5.0
   resolution: "@typescript-eslint/experimental-utils@npm:5.5.0"
   dependencies:
@@ -3284,6 +3294,23 @@ eslint-config-airbnb@latest:
   languageName: node
   linkType: hard
 
+"eslint-plugin-jest@npm:^25.3.0":
+  version: 25.3.0
+  resolution: "eslint-plugin-jest@npm:25.3.0"
+  dependencies:
+    "@typescript-eslint/experimental-utils": ^5.0.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^4.0.0 || ^5.0.0
+    eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+    jest:
+      optional: true
+  checksum: d801c166f528392fbb0234e34b893e97c24a7be049744f2d23b1702bce6202d5f0760886a591f884ffa82c7e01a2b06134e86da991bfa568ca5a90311e5f452e
+  languageName: node
+  linkType: hard
+
 "eslint-plugin-jsx-a11y@npm:latest":
   version: 6.5.1
   resolution: "eslint-plugin-jsx-a11y@npm:6.5.1"
@@ -3613,6 +3640,15 @@ eslint-config-airbnb@latest:
     snapdragon: ^0.8.1
     to-regex: ^3.0.1
   checksum: a41531b8934735b684cef5e8c5a01d0f298d7d384500ceca38793a9ce098125aab04ee73e2d75d5b2901bc5dddd2b64e1b5e3bf19139ea48bac52af4a92f1d00
+  languageName: node
+  linkType: hard
+
+"fast-check@npm:^2.20.0":
+  version: 2.20.0
+  resolution: "fast-check@npm:2.20.0"
+  dependencies:
+    pure-rand: ^5.0.0
+  checksum: 2f8c0bbb089556e51ad9669b21d14611e557ddd11037b26a5a0a9c32c41b23f792cf4c13b58083c735261b0ce8e840c865ea25dc07651deb2045c2d73b63bf57
   languageName: node
   linkType: hard
 
@@ -5018,7 +5054,7 @@ eslint-config-airbnb@latest:
   languageName: node
   linkType: hard
 
-"jest-diff@npm:^27.4.2":
+"jest-diff@npm:^27.0.0, jest-diff@npm:^27.4.2":
   version: 27.4.2
   resolution: "jest-diff@npm:27.4.2"
   dependencies:
@@ -6830,7 +6866,7 @@ eslint-config-airbnb@latest:
   languageName: node
   linkType: hard
 
-"pretty-format@npm:^27.4.2":
+"pretty-format@npm:^27.0.0, pretty-format@npm:^27.4.2":
   version: 27.4.2
   resolution: "pretty-format@npm:27.4.2"
   dependencies:
@@ -6978,6 +7014,13 @@ eslint-config-airbnb@latest:
   version: 2.1.1
   resolution: "punycode@npm:2.1.1"
   checksum: 823bf443c6dd14f669984dea25757b37993f67e8d94698996064035edd43bed8a5a17a9f12e439c2b35df1078c6bec05a6c86e336209eb1061e8025c481168e8
+  languageName: node
+  linkType: hard
+
+"pure-rand@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "pure-rand@npm:5.0.0"
+  checksum: f33a9021a8916ae1c2e3211ba0ecaa01ed5fae21e3979ce0ee67e562b7e0dabf0d35a9f4113f0c0ceffa799d2276da44d09eebe6b7f49ec3b8fe0dcfa59f8dec
   languageName: node
   linkType: hard
 
@@ -8299,6 +8342,7 @@ eslint-config-airbnb@latest:
   resolution: "tsrwpcx@workspace:."
   dependencies:
     "@types/chrome": 0.0.75
+    "@types/jest": ^27.0.3
     "@types/react": ^16.7.8
     "@types/react-dom": ^16.0.11
     "@types/styled-components": ^5.1.16
@@ -8308,8 +8352,10 @@ eslint-config-airbnb@latest:
     eslint: ^7.32.0
     eslint-config-airbnb: latest
     eslint-plugin-import: latest
+    eslint-plugin-jest: ^25.3.0
     eslint-plugin-jsx-a11y: latest
     eslint-plugin-react: latest
+    fast-check: ^2.20.0
     jest: ^27.4.3
     mini-css-extract-plugin: 0.9.0
     pnp-webpack-plugin: ^1.7.0

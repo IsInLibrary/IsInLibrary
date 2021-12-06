@@ -18,8 +18,17 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
-    }
+    },
+    "overrides": [
+        {
+            "files": ["**/*.test.js"],
+            "env": { "jest/globals": true },
+            "plugins": ["jest"],
+            "extends": ["plugin:jest/recommended"]
+        }
+    ]
 }
