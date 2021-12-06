@@ -2,7 +2,7 @@
     "name": "IsInLibrary",
     "version": "0.0.1",
     "manifest_version": 2,
-    "description": "장바구니에 책을 담을때 책이 근처 도서관에 알려주는 확장 프로그램",
+    "description": "장바구니에 책을 담을때 책이 근처 도서관에 있는지 알려주는 확장 프로그램",
     "homepage_url": "https://github.com/IsInLibrary/IsInLibrary",
     "icons": {},
     "action": {},
