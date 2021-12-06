@@ -104,7 +104,11 @@ const config = smp.wrap({
         chunkIds: 'deterministic',
         minimize: true,
         minimizer: [
-            new TerserPlugin(),
+            new TerserPlugin({
+                terserOptions: {
+                    output: { ascii_only: true }
+                }
+            }),
             new CssMinimizerPlugin(),
         ],
     },
