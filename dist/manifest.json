@@ -11,18 +11,22 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["src/js/background.js"],
+        "scripts": ["src/js/background.bundle.js"],
         "persistent": true
     },
     "permissions": ["https://*/*", "activeTab", "storage"],
     "web_accessible_resources": [
-        "src/js/background.js",
-        "src/js/content.js",
-        "src/js/popup.js"
+        "src/js/background.bundle.js",
+        "src/js/content.bundle.js",
+        "src/js/popup.bundle.js"
     ],
     "content_security_policy": "style-src 'self' 'unsafe-inline' script-src 'self' 'unsafe-inline';",
     "content_scripts": [{
         "matches": ["https://*/*"],
-        "js": ["src/js/background.js", "src/js/content.js", "src/js/popup.js"]
+        "js": [
+            "src/js/background.bundle.js",
+            "src/js/content.bundle.js",
+            "src/js/popup.bundle.js"
+        ]
     }]
 }

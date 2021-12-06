@@ -31,6 +31,7 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             filename: 'popup.html',
+            template: path.resolve(__dirname, 'src/popup.html'),
             chunks: ['popup']
         }),
     ],
