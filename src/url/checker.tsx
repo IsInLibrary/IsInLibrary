@@ -1,11 +1,11 @@
-type BookStore = "Amazon" | "Aladin" | "Yes24" | "Kyobo";
+export type BookStore = "Amazon" | "Aladin" | "Yes24" | "Kyobo";
 
-interface IMappingElement {
+export interface IMappingElement {
   predicate: URLFinder;
   name: BookStore;
 }
 
-type URLFinder = (base: string, path: string) => boolean;
+export type URLFinder = (base: string, path: string) => boolean;
 
 const checkRegex = (re: RegExp, href: string) => re.test(href);
 
@@ -27,7 +27,7 @@ const isInKyoboCart: URLFinder = (base: string, path: string) =>
     base + path
   );
 
-const mappingFunctions: IMappingElement[] = [
+export const mappingFunctions: IMappingElement[] = [
   {
     predicate: isInAmazonCart,
     name: "Amazon",
@@ -46,14 +46,17 @@ const mappingFunctions: IMappingElement[] = [
   },
 ];
 
-const urlMapper = (
+export const urlMapper = (
   base = window.location.origin,
   path = window.location.pathname
-) => {
-  return mappingFunctions.reduce((prev, elem) => {
-    if (!prev && elem.predicate(base, path)) {
-      return elem.name;
-    }
-    return prev;
-  }, null);
+): BookStore | null => {
+  return mappingFunctions
+    .map((e) => e.name)
+    .reduce((prev, elem, idx) => {
+      const predicate = mappingFunctions[idx].predicate;
+      if (!prev && predicate(base, path)) {
+        return elem;
+      }
+      return prev;
+    }, null);
 };
