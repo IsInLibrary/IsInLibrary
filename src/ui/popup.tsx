@@ -19,6 +19,7 @@ class Hello extends React.Component {
     return (
       <PopupPadded className="popup-padded">
         <h1>Hello, World!</h1>
+        <span className="text-blue-500">Tailwind Enabled if text is blue.</span>
       </PopupPadded>
     );
   }
