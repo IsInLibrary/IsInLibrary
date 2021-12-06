@@ -7,12 +7,8 @@ import "tailwindcss/tailwind.css";
 class Hello extends React.Component {
   render() {
     const PopupPadded = styled.div`
-      min-width: 20vw;
-      min-height: 40vh;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 10px;
-      padding-right: 10px;
+      width: 30vw;
+      height: 40vh;
 
       h1:first-child {
         color: blueviolet;

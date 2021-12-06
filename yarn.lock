@@ -4902,6 +4902,62 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-in-library@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "is-in-library@workspace:."
+  dependencies:
+    "@babel/core": ^7.16.0
+    "@mui/material": ^5.2.2
+    "@mui/styled-engine-sc": ^5.1.0
+    "@swc/core": ^1.2.118
+    "@types/chrome": ^0.0.168
+    "@types/jest": ^27.0.3
+    "@types/react": ^17.0.37
+    "@types/react-dom": ^17.0.11
+    "@types/styled-components": ^5.1.16
+    "@typescript-eslint/eslint-plugin": ^5.5.0
+    "@typescript-eslint/parser": ^5.5.0
+    autoprefixer: ^10.4.0
+    babel-loader: ^8.2.3
+    compression-webpack-plugin: ^9.0.1
+    css-loader: ^6.5.1
+    eslint: ^8.4.0
+    eslint-config-airbnb: ^19.0.2
+    eslint-plugin-import: ^2.25.3
+    eslint-plugin-jest: ^25.3.0
+    eslint-plugin-jsx-a11y: ^6.5.1
+    eslint-plugin-react: ^7.27.1
+    eslint-webpack-plugin: ^3.1.1
+    fast-check: ^2.20.0
+    html-webpack-plugin: ^5.5.0
+    jest: ^27.4.3
+    mini-css-extract-plugin: ^2.4.5
+    pnp-webpack-plugin: ^1.7.0
+    postcss: ^8.4.4
+    postcss-cli: ^9.0.2
+    postcss-loader: ^6.2.1
+    postcss-preset-env: ^7.0.1
+    react: ^17.0.2
+    react-dom: ^17.0.2
+    react-is: ^17.0.2
+    regenerator-runtime: ^0.13.9
+    style-loader: ^3.3.1
+    styled-components: ^5.3.3
+    styled-normalize: ^8.0.7
+    stylelint: ^14.1.0
+    stylelint-webpack-plugin: ^3.1.0
+    swc-loader: ^0.1.15
+    tailwindcss: ^2.2.19
+    terser-webpack-plugin: ^5.2.5
+    ts-jest: ^27.1.0
+    ts-loader: ^9.2.6
+    typescript: ^4.5.2
+    webpack: ^5.64.4
+    webpack-cli: ^4.9.1
+    yarn-upgrade-all: ^0.5.4
+  languageName: unknown
+  linkType: soft
+
 "is-lambda@npm:^1.0.1":
   version: 1.0.1
   resolution: "is-lambda@npm:1.0.1"
@@ -8747,62 +8803,6 @@ __metadata:
   checksum: de17a98d4614481f7fcb5cd53ffc1aaf8654313be0291e1bfaee4b4bb31a20494b7d218ff2e15017883e8ea9626599b3b0e0229c18383ba9dce89da2adf15cb9
   languageName: node
   linkType: hard
-
-"tsrwpcx@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "tsrwpcx@workspace:."
-  dependencies:
-    "@babel/core": ^7.16.0
-    "@mui/material": ^5.2.2
-    "@mui/styled-engine-sc": ^5.1.0
-    "@swc/core": ^1.2.118
-    "@types/chrome": ^0.0.168
-    "@types/jest": ^27.0.3
-    "@types/react": ^17.0.37
-    "@types/react-dom": ^17.0.11
-    "@types/styled-components": ^5.1.16
-    "@typescript-eslint/eslint-plugin": ^5.5.0
-    "@typescript-eslint/parser": ^5.5.0
-    autoprefixer: ^10.4.0
-    babel-loader: ^8.2.3
-    compression-webpack-plugin: ^9.0.1
-    css-loader: ^6.5.1
-    eslint: ^8.4.0
-    eslint-config-airbnb: ^19.0.2
-    eslint-plugin-import: ^2.25.3
-    eslint-plugin-jest: ^25.3.0
-    eslint-plugin-jsx-a11y: ^6.5.1
-    eslint-plugin-react: ^7.27.1
-    eslint-webpack-plugin: ^3.1.1
-    fast-check: ^2.20.0
-    html-webpack-plugin: ^5.5.0
-    jest: ^27.4.3
-    mini-css-extract-plugin: ^2.4.5
-    pnp-webpack-plugin: ^1.7.0
-    postcss: ^8.4.4
-    postcss-cli: ^9.0.2
-    postcss-loader: ^6.2.1
-    postcss-preset-env: ^7.0.1
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-is: ^17.0.2
-    regenerator-runtime: ^0.13.9
-    style-loader: ^3.3.1
-    styled-components: ^5.3.3
-    styled-normalize: ^8.0.7
-    stylelint: ^14.1.0
-    stylelint-webpack-plugin: ^3.1.0
-    swc-loader: ^0.1.15
-    tailwindcss: ^2.2.19
-    terser-webpack-plugin: ^5.2.5
-    ts-jest: ^27.1.0
-    ts-loader: ^9.2.6
-    typescript: ^4.5.2
-    webpack: ^5.64.4
-    webpack-cli: ^4.9.1
-    yarn-upgrade-all: ^0.5.4
-  languageName: unknown
-  linkType: soft
 
 "tsutils@npm:^3.21.0":
   version: 3.21.0
