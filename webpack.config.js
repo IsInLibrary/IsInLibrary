@@ -1,4 +1,5 @@
 const path = require('path');
+const PnpWebpackPlugin = require(`pnp-webpack-plugin`);
 
 module.exports = {
     mode: "development",
@@ -16,7 +17,16 @@ module.exports = {
     },
 
     resolve: {
-        extensions: [".ts", ".tsx", ".js"]
+        extensions: [".ts", ".tsx", ".js", ".jsx"],
+        plugins: [
+            PnpWebpackPlugin,
+        ],
+    },
+
+    resolveLoader: {
+        plugins: [
+            PnpWebpackPlugin.moduleLoader(module),
+        ],
     },
 
     module: {
