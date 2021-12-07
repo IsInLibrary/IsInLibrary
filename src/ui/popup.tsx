@@ -1,58 +1,150 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import styled from "styled-components";
 
 import "tailwindcss/tailwind.css";
 
-class Hello extends React.Component {
-  render() {
-    const PopupPadded = styled.div`
-      min-width: 350px;
-      min-height: 500px;
-      background-color: #2c272e;
-      display: flex;
-      flex-direction: column;
+import {
+  Typography,
+  FormControl,
+  Select,
+  MenuItem,
+  Box,
+  Chip,
+  createTheme,
+  ThemeProvider,
+  Checkbox,
+  ListItemText,
+} from "@mui/material";
+import type { BookStore } from "../url/checker";
+import { PopupPadded } from "../style/styled-popup";
+import { useState } from "react";
 
-      border: 0.15em solid #fff3e4;
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
-      div {
-        flex-grow: 1;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-      }
-      div > h1 {
-        flex-shrink: 1;
-        margin-top: auto;
-        margin-bottom: auto;
-        font-size: 22px;
-        overflow-wrap: break-word;
-      }
-
-      div:first-child > h1 {
-        color: #94b3fd;
-      }
-
-      div:nth-child(3) > h1 {
-        color: #eeebdd;
-      }
-    `;
-    return (
-      <PopupPadded className="popup-padded">
-        <div>
-          <h1>Hello, World!</h1>
-        </div>
-        <div>
-          <h1 className="text-blue-400">Tailwind Enabled if text is blue.</h1>
-        </div>
-        <div>
-          <h1>Happy Reading!</h1>
-        </div>
-      </PopupPadded>
-    );
-  }
+export interface IBookStoreElement {
+  name: BookStore;
+  korean: string;
 }
+
+export const bookStores: IBookStoreElement[] = [
+  { name: "Amazon", korean: "아마존" },
+  { name: "Aladin", korean: "알라딘" },
+  { name: "Yes24", korean: "예스24" },
+  { name: "Kyobo", korean: "교보문고" },
+];
+
+const Popup: React.FC = () => {
+  const [selectedBookStores, setSelectedBookStores] = useState<
+    IBookStoreElement[]
+  >([]);
+
+  const handleChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+
+    let arr: any[] = value as any[];
+
+    arr[arr.length - 1] = bookStores.find(
+      (e) => e.name === arr[arr.length - 1]
+    );
+
+    const tail = arr[arr.length - 1] as IBookStoreElement;
+
+    if (selectedBookStores.find((e) => e == tail)) {
+      arr = arr.filter((e) => e !== tail);
+    }
+
+    setSelectedBookStores(arr);
+  };
+
+  return (
+    <PopupPadded className="popup-padded">
+      <div>
+        <h1>Hello, World!</h1>
+      </div>
+      <div>
+        <h1 className="text-blue-400">Tailwind Enabled if text is blue.</h1>
+      </div>
+      <div>
+        <FormControl>
+          <Typography
+            fontSize="22px"
+            style={{ color: "#eeebdd" }}
+            className="my-0"
+          >
+            선택된 서점 목록
+          </Typography>
+          <Select
+            className="mt-1 mb-0 py-0"
+            multiple
+            size="small"
+            value={selectedBookStores}
+            onChange={handleChange}
+            renderValue={(selected) => {
+              return (
+                <Box>
+                  {selected.map((value) => (
+                    <Chip
+                      key={value.name}
+                      label={value.korean}
+                      className="max-h-10 my-1 ml-5 mr-1"
+                      style={{
+                        backgroundColor: "#344CB7",
+                        color: "#eeebdd",
+                      }}
+                    />
+                  ))}
+                </Box>
+              );
+            }}
+            MenuProps={MenuProps}
+            inputProps={{ "aria-label": "Without label" }}
+          >
+            <MenuItem disabled value="">
+              <em>서점</em>
+            </MenuItem>
+            {bookStores.map((elem) => (
+              <MenuItem key={elem.name} value={elem.name}>
+                <Checkbox
+                  checked={
+                    selectedBookStores.findIndex((e) => e.name === elem.name) >
+                    -1
+                  }
+                />
+                <ListItemText primary={elem.korean} />
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      </div>
+    </PopupPadded>
+  );
+};
+
+const darkTheme = createTheme({
+  palette: {
+    mode: "dark",
+  },
+});
+
+const Main: React.FC = () => {
+  return (
+    <ThemeProvider theme={darkTheme}>
+      <Popup />
+    </ThemeProvider>
+  );
+};
 
 // --------------
 
-ReactDOM.render(<Hello />, document.getElementById("is-in-library"));
+ReactDOM.render(<Main />, document.getElementById("is-in-library"));
