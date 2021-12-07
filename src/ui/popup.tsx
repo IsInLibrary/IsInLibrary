@@ -92,12 +92,12 @@ const Popup: React.FC = () => {
             onChange={handleChange}
             renderValue={(selected) => {
               return (
-                <Box>
+                <Box className="flex h-full">
                   {selected.map((value) => (
                     <Chip
                       key={value.name}
                       label={value.korean}
-                      className="max-h-10 my-1 ml-5 mr-1"
+                      className="flex-grow my-1 ml-5 mr-1"
                       style={{
                         backgroundColor: "#344CB7",
                         color: "#eeebdd",
@@ -108,7 +108,11 @@ const Popup: React.FC = () => {
               );
             }}
             MenuProps={MenuProps}
-            inputProps={{ "aria-label": "Without label" }}
+            inputProps={{
+              style: {
+                padding: 0,
+              },
+            }}
           >
             <MenuItem disabled value="">
               <em>서점</em>
