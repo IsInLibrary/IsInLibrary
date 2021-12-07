@@ -68,36 +68,40 @@ const Popup: React.FC = () => {
   };
 
   return (
-    <PopupPadded className="popup-padded">
+    <PopupPadded className="popup-padded overflow-auto">
       <div>
         <h1>Hello, World!</h1>
       </div>
       <div>
         <h1 className="text-blue-400">Tailwind Enabled if text is blue.</h1>
       </div>
-      <div>
+      <div
+        className="flex-grow"
+        style={{ flexBasis: "auto", marginTop: "auto", marginBottom: "0" }}
+      >
         <FormControl>
           <Typography
             fontSize="22px"
-            style={{ color: "#eeebdd" }}
-            className="my-0"
+            style={{
+              color: "#eeebdd",
+            }}
           >
             선택된 서점 목록
           </Typography>
           <Select
-            className="mt-1 mb-0 py-0"
+            className="mt-1 flex flex-col"
             multiple
-            size="small"
             value={selectedBookStores}
             onChange={handleChange}
+            sx={{ minHeight: "150px" }}
             renderValue={(selected) => {
               return (
-                <Box className="flex h-full">
+                <Box className="select-box">
                   {selected.map((value) => (
                     <Chip
                       key={value.name}
                       label={value.korean}
-                      className="flex-grow my-1 ml-5 mr-1"
+                      className="h-8 my-1 ml-6 mr-5"
                       style={{
                         backgroundColor: "#344CB7",
                         color: "#eeebdd",
