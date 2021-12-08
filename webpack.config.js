@@ -45,24 +45,10 @@ const config = smp.wrap({
                 include: path.resolve(__dirname, 'src'),
                 exclude: path.resolve(__dirname, 'src/test'),
                 use: [{
-                    loader: "swc-loader",
+                    loader: 'esbuild-loader',
                     options: {
-                        jsc: {
-                            parser: {
-                                target: "es2015",
-                                syntax: "typescript",
-                                jsx: true,
-                            },
-                            transform: {
-                                react: {
-                                    pragma: "React.createElement",
-                                    pragmaFrag: "React.Fragment",
-                                    throwIfNamespace: true,
-                                    development: false,
-                                    useBuiltins: false,
-                                },
-                            },
-                        }
+                        loader: 'tsx', // Remove this if you're not using JSX
+                        target: 'es2015' // Syntax to compile to (see options below for possible values)
                     }
                 }],
             },
@@ -103,7 +89,7 @@ const config = smp.wrap({
         minimize: true,
         minimizer: [
             new TerserPlugin({
-                minify: TerserPlugin.swcMinify,
+                minify: TerserPlugin.esbuildMinify,
             }),
             new CssMinimizerPlugin(),
         ],
