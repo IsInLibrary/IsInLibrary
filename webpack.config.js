@@ -25,8 +25,6 @@ const config = smp.wrap({
     },
 
     plugins: [
-        new ESLintPlugin({ cache: true }),
-        new StylelintPlugin({ files: '**/*.css', cache: true }),
         new HtmlWebpackPlugin({
             filename: 'popup.html',
             template: path.resolve(__dirname, 'src/popup.html'),
@@ -105,9 +103,7 @@ const config = smp.wrap({
         minimize: true,
         minimizer: [
             new TerserPlugin({
-                terserOptions: {
-                    output: { ascii_only: true }
-                }
+                minify: TerserPlugin.swcMinify,
             }),
             new CssMinimizerPlugin(),
         ],
